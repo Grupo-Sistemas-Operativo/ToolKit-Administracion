@@ -16,3 +16,13 @@ buscar_proceso() {
     ps aux | grep -i "$proc" | grep -v grep
     echo ""
 }
+matar_proceso() {
+    echo -n "Ingrese el PID del proceso que desea terminar: "
+    read pid
+    if kill $pid 2>/dev/null; then
+        echo "Proceso $pid terminado correctamente."
+    else
+        echo "Error al terminar proceso $pid. Verifique que el PID sea correcto y que tenga permisos."
+    fi
+    echo ""
+}
