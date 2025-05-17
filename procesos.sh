@@ -9,3 +9,10 @@ mostrar_procesos() {
     echo ""
 }
 
+buscar_proceso() {
+    echo -n "Ingrese el nombre o parte del nombre del proceso a buscar: "
+    read proc
+    echo "Procesos que coinciden con '$proc':"
+    ps aux | grep -i "$proc" | grep -v grep
+    echo ""
+}
