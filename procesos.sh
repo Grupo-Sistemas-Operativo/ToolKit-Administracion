@@ -26,3 +26,24 @@ matar_proceso() {
     fi
     echo ""
 }
+
+mostrar_menu_procesos() {
+    echo "====== Módulo Procesos ======"
+    echo "1) Mostrar procesos activos"
+    echo "2) Buscar proceso por nombre"
+    echo "3) Terminar proceso por PID"
+    echo "0) Volver al menú principal"
+    echo -n "Seleccione una opción: "
+}
+
+while true; do
+    mostrar_menu_procesos
+    read opcion
+    case $opcion in
+        1) mostrar_procesos ;;
+        2) buscar_proceso ;;
+        3) matar_proceso ;;
+        0) exit 0 ;;
+        *) echo "Opción inválida. Intente nuevamente." ;;
+    esac
+done
