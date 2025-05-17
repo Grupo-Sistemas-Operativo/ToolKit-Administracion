@@ -18,3 +18,34 @@ mostrar_menu() {
     echo "=============================="
     echo -n "Seleccione una opción: "
 }
+
+# Bucle principal
+while true; do
+    mostrar_menu
+    read opcion
+    case $opcion in
+        1)
+            ./procesos.sh
+            ;;
+        2)
+            ./memoria.sh
+            ;;
+        3)
+            ./disco.sh
+            ;;
+        4)
+            ./usuarios.sh
+            ;;
+        5)
+            ./seguridad.sh
+            ;;
+        0)
+            echo "Saliendo..."
+            exit 0
+            ;;
+        *)
+            echo "Opción inválida. Intente nuevamente."
+            sleep 2
+            ;;
+    esac
+done
