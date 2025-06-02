@@ -22,3 +22,19 @@ while true; do
             echo ">>> Tamaño ocupado por $ruta:"
             du -sh "$ruta" 2>/dev/null || echo "Ruta no válida"
             ;;
+        3)
+            read -p "Ingrese el directorio: " directorio
+            echo
+            echo ">>> Archivos en $directorio con permisos:"
+            ls -l "$directorio" 2>/dev/null || echo "Directorio no válido"
+            ;;
+        0)
+            break
+            ;;
+        *)
+            echo "Opción inválida. Intente nuevamente."
+            ;;
+    esac
+    echo
+    read -p "Presione Enter para continuar..."
+done
